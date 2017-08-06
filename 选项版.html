@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项版</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none ;
+        }
+        #container {
+            height: 400px;
+            width: 400px;
+            margin: 20px  auto;
+        }
+        #tabs {
+            overflow: hidden;
+        }
+        #tabs li{
+            width: 120px;
+            height: 30px;
+            background: gray ;
+            float: left;
+            margin-right: 10px;
+            text-align: center ;
+        }
+        #content {
+            height: 270px;
+            border-top: 1px solid black;
+            background: grey ;
+        }
+        #tabs  .selected {
+            background: black ;
+            color: black;
+        }
+        #content > div {
+            display: none;
+        }
+        #content .selected {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+       <div id="container" >
+           <ul id="tabs">
+               <li>js</li>
+               <li>html</li>
+               <li>css</li>
+           </ul>
+           <div id="content" >
+               <div >js..</div >
+               <div >html..</div >
+               <div >css..</div >
+           </div>
+       </div>
+<script>
+    var oTabs = document.getElementById ('tabs');
+    var oContent = document .getElementById ('content');
+    var aLi = oTabs.getElementsByTagName ('li');
+    var aDiv = oContent .getElementsByTagName('div');
+    for (var i=0;i<aLi.length ;i++){
+        aLi[i].index=i;
+        aLi[i].onclick=function () {
+           for (var i=0;i<aLi.length ;i++){
+               aLi[i].className ='';
+               aDiv [i].className ='';
+           } this.className='selected';
+             aDiv[this .index].className ='selected';
+        };
+    }
+</script>
+</body>
+</html>
