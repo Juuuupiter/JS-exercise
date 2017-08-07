@@ -30,6 +30,7 @@
              float: left;
             margin-right: 5px;
              text-align: center ;
+             cursor: pointer ;
          }
          #number .selected {
              background: orangered ;
@@ -55,6 +56,7 @@
              float: left;
              margin-right: 5px;
              text-align: center;
+             cursor: pointer ;
          }
 
 
@@ -81,30 +83,61 @@
     </div>
 </div>
 <script>
+    var oContainer = document .getElementById ('container');
     var oNumber = document .getElementById ('number');
     var oPic = document .getElementById ('pic');
     var oLeri=document .getElementById ('leri');
     var aLi= oNumber .getElementsByTagName ('li');
     var aImg=oPic .getElementsByTagName ('img');
-    var oLe=oLeri .getElementsByTagName ('le');
-    var oRi=oLeri .getElementsByTagName ('ri');
-    var nowindex=0;
+    var oLe= document .getElementById ('le');
+    var oRi=document .getElementById ('ri');
+    var nowindex =0;
+    var timer;
     for(var i=0; i<aLi.length ;i++) {
         aLi [i].index =i;
         aLi [i].onmouseover = function () {
             for (var i = 0; i < aLi.length; i++) {
-                aLi[i].className = '';
+                aLi[i].className ='';
                 aImg[i].className ='';
             }
             this.className = 'selected';
             aImg[this .index].className ='selected';
         };
     }
-     oLe .onclick = oLe .onclick =function () {
-         if(this == oLe){
-cccccccccccccccccc
+     oLe .onclick = oRi .onclick =function () {
+             if (this === oLe) {
+                 nowindex--;
+                 if (nowindex == -1) {
+                     nowindex = aLi.length - 1;
+                 }
+             }else {
+                     nowindex++;
+                     if (nowindex == aLi.length) {
+                         nowindex = 0;
+                     }
+                 }
+                 for (var i = 0; i<aLi.length; i++) {
+                     aLi[i].className = '';
+                     aImg[i].className = '';
+                 }
+                 aLi [nowindex].className ='selected';
+                  aImg[nowindex].className = 'selected';
          }
-     }
+        oLe .onselectstart = oRi .onselectstart = function(){
+            return false;
+        };
+         oContainer .onmouseover =function () {
+             clearInterval (timer );
+         };
+        oContainer .onmouseout =function () {
+            play ();
+        };
+         play ();
+         function play() {
+            timer=setInterval (function () {
+                oLe .onclick ();
+            },1000)
+        }
 </script>
 </body>
 </html>
