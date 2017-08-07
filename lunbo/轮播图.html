@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+         *{
+             margin: 0;
+             padding: 0;
+         }
+         ul{
+             list-style: none ;
+         }
+         #container {
+             height: 350px;
+             width: 680px;
+             margin: 50px auto ;
+            position: relative;
+         }
+         #number {
+             position: absolute;
+             right: 10px;
+             bottom: 10px;
+         }
+         #number li{
+             width: 20px;
+             height: 20px;
+             background: black ;
+             color: white;
+             float: left;
+            margin-right: 5px;
+             text-align: center ;
+         }
+         #number .selected {
+             background: orangered ;
+             color: black;
+         }
+         #pic img{
+             display: none;
+         }
+         #pic .selected{
+             display: block;
+         }
+
+         #leri{
+             position: absolute;
+             left: 10px;
+             bottom: 10px;
+         }
+         #leri span {
+             width: 20px;
+             height: 20px;
+             background: black ;
+             color: white;
+             float: left;
+             margin-right: 5px;
+             text-align: center;
+         }
+
+
+     </style>
+</head>
+<body>
+<div id="container">
+    <ul id="number">
+        <li class="selected " >1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="pic">
+        <img class="selected " src="img/1.jpg " alt="" >
+        <img src="img/2.jpg ">
+        <img src="img/3.jpg ">
+        <img src="img/4.jpg ">
+
+    </div>
+    <div id="leri">
+            <span id="le"><</span>
+            <span id="ri">></span>
+    </div>
+</div>
+<script>
+    var oNumber = document .getElementById ('number');
+    var oPic = document .getElementById ('pic');
+    var oLeri=document .getElementById ('leri');
+    var aLi= oNumber .getElementsByTagName ('li');
+    var aImg=oPic .getElementsByTagName ('img');
+    var oLe=oLeri .getElementsByTagName ('le');
+    var oRi=oLeri .getElementsByTagName ('ri');
+    var nowindex=0;
+    for(var i=0; i<aLi.length ;i++) {
+        aLi [i].index =i;
+        aLi [i].onmouseover = function () {
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].className = '';
+                aImg[i].className ='';
+            }
+            this.className = 'selected';
+            aImg[this .index].className ='selected';
+        };
+    }
+     oLe .onclick = oLe .onclick =function () {
+         if(this == oLe){
+cccccccccccccccccc
+         }
+     }
+</script>
+</body>
+</html>
