@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            padding: 5px ;
+        }
+        fieldset {
+            border: 5px solid gainsboro;
+        }
+        .focus{
+            border: 1px solid palevioletred;
+            background: pink ;
+        }
+    </style>
+</head>
+<body>
+       <form>
+           <fieldset>
+           <legend>个人基本信息</legend>
+           <div>
+
+               姓名: <input type="text" value="姓名">
+           </div>
+           <div>
+               密码: <input type="password " value="密码" >
+           </div>
+           <div>
+               个人信息:<textarea rows="2" cols="20" >信息</textarea>
+           </div>
+           </fieldset>
+       </form>
+<script src="jquery-1.12.4.js "></script>
+<script>
+    $(function () {
+        $(":input ").focus (function () {
+            $(this).addClass ("focus");
+            if ($(this).val()==this.defaultValue){
+                this .value ="";
+            }
+        }).blur (function () {
+            $(this).removeClass ("focus")
+            this .value=this .defaultValue ;
+        })
+    })
+</script>
+</body>
+</html>
