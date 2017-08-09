@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none ;
+        }
+        #container {
+            height: 350px;
+            width: 680px;
+            margin: 50px auto ;
+            position: relative;
+        }
+        #number {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #number li{
+            width: 20px;
+            height: 20px;
+            background: black ;
+            color: white;
+            float: left;
+            margin-right: 5px;
+            text-align: center ;
+            cursor: pointer ;
+        }
+        #number .selected {
+            background: orangered ;
+            color: black;
+        }
+        #pic img{
+            display: none;
+        }
+        #pic .selected{
+            display: block;
+        }
+
+        #leri{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #leri span {
+            width: 20px;
+            height: 20px;
+            background: black ;
+            color: white;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            cursor: pointer ;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="number">
+        <li class="selected " >1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="pic">
+        <img class="selected " src="img/1.jpg " alt="" >
+        <img src="img/2.jpg ">
+        <img src="img/3.jpg ">
+        <img src="img/4.jpg ">
+
+    </div>
+    <div id="leri">
+        <span id="le"><</span>
+        <span id="ri">></span>
+    </div>
+</div>
+<script src="jquery-1.12.4.js "></script>
+<script>
+        $(function () {
+            var nowIndex =0;
+            var timer
+            var $lis=$("#number li");
+            $lis.on("mouseover",function () {
+                nowIndex = $(this).index ();
+                changeImg();
+            })
+            $("#le").on("click",function () {
+                  nowIndex --;
+                if(nowIndex == -1){
+                    nowIndex = $lis .length -1;
+                }
+                changeImg();
+            })
+            $("#ri").on("click",function () {
+                nowIndex ++;
+                if(nowIndex == $lis.length){
+                    nowIndex =0;
+                }
+                changeImg ();
+            })
+
+               play ();
+
+            $("#container").hover(function () {
+                clearInterval (timer);
+            },function () {
+                        play ();
+            })
+
+            function play() {
+                timer=setInterval (function () {
+                    $("#ri").trigger ("click");
+                },1000);
+            }
+            function changeImg() {
+                $lis .eq(nowIndex).addClass ("selected").siblings ().removeClass ("selected");
+                $("#pic img").eq (nowIndex).addClass ("selected").siblings ().removeClass ("selected");
+
+            }
+        })
+</script>
+</body>
+</html>
