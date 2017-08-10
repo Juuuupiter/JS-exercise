@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th{
+            border-bottom: 1px solid teal;
+        }
+        .selected{
+            background: orangered ;
+        }
+    </style >
+</head>
+<body>
+<table>
+    <thead>
+    <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="radio" name="choice">张三</td>
+        <td>男</td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="choice">里斯</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="choice" >抖森</td>
+        <td>男</td>
+        <td>英国伦敦</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="choice">美美</td>
+        <td>女</td>
+        <td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="choice">小兰</td>
+        <td>女</td>
+        <td>浙江温州</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="choice">Rain</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+    </tbody>
+</table>
+<script src="jquery-1.12.4.js "></script>
+<script>
+$(function (){
+    var $tr=$("tbody tr");
+    $tr.on("click",function () {
+        $(this).addClass("selected").siblings().removeClass("selected")
+        $(this).find(":radio").prop("checked", true )
+    }
+    )
+})
+</script>
+</body>
+</html>
