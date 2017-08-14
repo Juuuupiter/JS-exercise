@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+ul,ol{
+    list-style: none;
+}
+input{
+    outline: none ;
+}
+#nav {
+    height: 109px;
+    background: #efefef ;
+}
+.wrap{
+    width: 990px;
+    margin: 0 auto ;
+    position:relative;
+}
+#logo {
+    position:absolute;
+    float: left;
+}
+input {
+    display: block;
+    height: 30px;
+    width: 180px;
+    font-size: 17px;
+}
+#search-box {
+    position:absolute;
+    float: left;
+    margin-left: 180px;
+    margin-top: 22px;
+}
+#color-box {
+position: absolute;
+    right: 15px;
+    margin-top: 15px;
+}
+#color-box li{
+    float: left;
+}
+#color-box a{
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url("../images/theme.gif") no-repeat ;
+    text-indent: -8000px;
+}
+#color-box .dark-blue {
+    background-position: 0 0;
+}
+#color-box .purple {
+background-position: -100px 0;
+}
+#color-box .red {
+    background-position: -80px 0;
+}
+#color-box .light-blue {
+    background-position: -60px 0;
+}
+#color-box .orange {
+    background-position: -40px 0;
+}
+#color-box .green {
+    background-position: -20px 0;
+}
+
+.line {
+    height: 37px;
+    width: inherit;
+    background: pink;
+    position: absolute;
+}
+#nav .line {
+    top: 50%;
+    margin-top: 15px;
+}
+a{
+    color: white;
+}
+.list li{
+    font-size: 17px;
+    float: left;
+    margin-left: 15px;
+    line-height: 37px;
+}

@@ -1,0 +1,132 @@
+#back{
+    height: 580px;
+}
+#back .wrap{
+    height: 561px;
+    margin-top: 10px;
+}
+#nav-left {
+    position: absolute;
+    background: orangered ;
+    width: 187px;
+    height: 560px;
+}
+#back .line {
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+}
+.lis {
+    margin-top: 37px;
+    margin-left: 10px;
+    width: 165px;
+    height: 524px;
+    background: #0FD55C ;
+}
+#nav-left  h5{
+    font-size: 15px;
+     line-height: 37px;
+ }
+.lis h3{
+    width: 164px;
+    height: 25px;
+    font-size: 15px;
+    color:#000000;
+    border-bottom: 1px solid gray;
+}
+.lis ul{
+    width: 165px;
+    height: 104px;
+}
+.lis  li{
+    float:left;
+    width: 79px;
+    height: 24px;
+    font-size: 15px;
+}
+#nav-right {
+    float: right;
+    width: 230px;
+    height: 321px;
+}
+#img {
+    width: 550px;
+    height: 321px;
+    position: absolute;
+    margin-left: 200px;
+}
+#img .selected {
+    display: block;
+}
+#pic{
+  float: right;
+}
+#intro {
+    width: 230px;
+    height: 135px;
+    margin-top: 187px;
+    border: 1px solid #9d9d9d ;
+}
+#intro li{
+    font-size: 14px;
+    color: black;
+}
+#intro h5{
+    color: black;
+    border-bottom: 1px solid grey;
+}
+#nav-down {
+    width: 790px;
+    height: 230px;
+    background: #7ACEF4 ;
+    float: right;
+   margin-top: 10px;
+}
+.high-line {
+    width: 790px;
+    height: 30px;
+    background: brown ;
+    position: relative;
+    border-bottom: 1px solid grey;
+}
+.high-line h2{
+    position: absolute;
+    line-height: 29px;
+    color: black;
+    font-size: 15px;
+    width: 100px;
+    height: 29px;
+}
+.high-line ul{
+    float: right;
+    width: 216px;
+    height: 23px;
+    margin-top: 6px;
+}
+.high-line li{
+    font-size: 15px;
+    color: black;
+    margin-right: 10px;
+    float: left;
+    width: 44px;
+    height: 23px;
+    background: blanchedalmond ;
+}
+.photo {
+    width: 3200px;
+    height: 195px;
+}
+.photo ul{
+    overflow: hidden;
+}
+.photo li{
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.photo span{
+    width: 183px;
+    height: 24px;
+    display: block;
+    text-align: center;
+}
