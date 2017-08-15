@@ -7,9 +7,9 @@
 }
 #nav-left {
     position: absolute;
-    background: orangered ;
     width: 187px;
     height: 560px;
+    border: 1px solid #9d9d9d;
 }
 #back .line {
     position: absolute;
@@ -21,11 +21,11 @@
     margin-left: 10px;
     width: 165px;
     height: 524px;
-    background: #0FD55C ;
 }
 #nav-left  h5{
     font-size: 15px;
      line-height: 37px;
+    margin-left: 10px;
  }
 .lis h3{
     width: 164px;
@@ -38,7 +38,7 @@
     width: 165px;
     height: 104px;
 }
-.lis  li{
+.lis li{
     float:left;
     width: 79px;
     height: 24px;
@@ -49,15 +49,18 @@
     width: 230px;
     height: 321px;
 }
-#img {
+#middle-img{
     width: 550px;
     height: 321px;
     position: absolute;
-    margin-left: 200px;
+    /*float: left;*/
+    margin-left: 197px;
 }
-#img .selected {
-    display: block;
+#middle-img {
+    width: 550px;
+    height: 321px;
 }
+
 #pic{
   float: right;
 }
@@ -78,14 +81,13 @@
 #nav-down {
     width: 790px;
     height: 230px;
-    background: #7ACEF4 ;
     float: right;
    margin-top: 10px;
+    overflow: hidden;
 }
 .high-line {
     width: 790px;
     height: 30px;
-    background: brown ;
     position: relative;
     border-bottom: 1px solid grey;
 }
@@ -110,21 +112,27 @@
     float: left;
     width: 44px;
     height: 23px;
-    background: blanchedalmond ;
+    background:#9d9d9d;
+    text-align: center ;
+}
+.selected {
+    background: palevioletred ;
 }
 .photo {
+    margin-top: 10px;
     width: 3200px;
     height: 195px;
-}
-.photo ul{
     overflow: hidden;
 }
 .photo li{
     float: left;
     margin-left: 10px;
     margin-right: 5px;
+
 }
+
 .photo span{
+    font-size: 15px;
     width: 183px;
     height: 24px;
     display: block;
