@@ -19,7 +19,7 @@
         position: relative;
 
     }
-        #container .img{
+    #container .img{
             width: 125px;
             height: 125px;
             position: absolute;
@@ -30,25 +30,55 @@
             transition: all 1s;
             cursor: pointer ;
         }
-        #container .img span{
+    #container .img span{
             width: 100%;
             height: 100%;
-            display: none;
+            display: block;
             opacity: 0;
             transition: all 1s;
+        }
+     #prev,#next{
+         width: 60px;
+         height: 60px;
+         background-color: #ffffff;
+         background-position: center ;
+         background-repeat: no-repeat ;
+         position: absolute;
+         top:50% ;
+         /*margin-top:-30%;*/
+         cursor: pointer;
+         display: none;
+     }
+     #prev{
+         background-image: url(img/prev.png);
+         left: 0;
+         border-radius: 0 8px 8px 0;
+     }
+        #next{
+            background-image:url(img/next.png);
+            right: 0;
+            border-radius: 8px  0 0 8px ;
         }
     </style>
 </head>
 <body>
 <div id="container"></div>
-
+<div id="prev"></div>
+<div id="next"></div>
 
 
 <script>
     (function(){
-      var Row=4, Col=6, Num=Row*Col, Big_W=750,Big_H=500;
+      var Row=4, Col=6, Num=Row*Col, Big_W=750,Big_H=500,Small_W=125,Small_H=125;
+        var iImgWidth;
+        var iImgHeight;
+        var fGapCol;
+        var fGapRow;
+        var aImg;
         var count=0;
         var oContainer=document.getElementById ("container");
+        var oPrev=document.getElementById ("prev");
+        var oNext=document.getElementById ("next");
         for(var i=0;i<Num;i++){
           var oBigImg=new Image ();
             oBigImg.onload =function(){
@@ -82,24 +112,86 @@
                     };
                     oDiv .index=index;
                     oContainer.appendChild(oDiv);
+                    oDiv.innerHTML="<span></span>"
                 }
             }
-            var aImg=oContainer .getElementsByTagName ("div");
-            var aImgWidth = aImg[0].offsetWidth;
-            var aImgHeight = aImg[0].offsetHeight;
-            var fGapRow = (oContainer.offsetWidth-aImgWidth*Col)/(Col+1);
-            var fGapCol = (oContainer.offsetHeight-aImgHeight*Row)/(Row+1);
+            aImg=oContainer .getElementsByTagName ("div");
+            iImgWidth = aImg[0].offsetWidth;
+            iImgHeight = aImg[0].offsetHeight;
+            fGapCol = (oContainer.offsetWidth-iImgWidth*Col)/(Col+1);
+            fGapRow = (oContainer.offsetHeight-iImgHeight*Row)/(Row+1);
             for(var i=0;i<Num;i++){
-                    aImg[i].style.left=(aImgWidth+fGapRow)*aImg[i].pos.col+fGapRow+"px";
-                    aImg[i].style.top=(aImgHeight+fGapCol)*aImg[i].pos.row+fGapCol+"px";
-                    aImg[i].style.transform="rotate("+(Math.random())*40-20+"deg";
+                    aImg[i].style.left=(iImgWidth+fGapCol)*aImg[i].pos.col+fGapCol+"px";
+                    aImg[i].style.top=(iImgHeight+fGapRow)*aImg[i].pos.row+fGapRow+"px";
+                    aImg[i].style.transform="rotate("+(Math.random()*40-20)+"deg";
                     aImg[i].style.transitionDelay =(Num -i)*100 +"ms";
             }
         }
-        var bFlag=true;
-        var fBigGaprow=(oContainer.offsetWidth-Big_W )/2;
-        var fBigGapcol=(oContainer.offsetHeight-Big_H )/2;
 
+        var bFlag=true;
+        var fBigGaprow=(oContainer.offsetHeight-Big_H)/2;
+        var fBigGapcol=(oContainer.offsetWidth-Big_W )/2;
+        oContainer.onclick=function (e) {
+            var target=e.target;
+            if(this!=e.target){
+                if(bFlag ){
+                   for( var i=0;i<aImg.length ;i++){
+                   aImg[i].style.top=fBigGaprow+Small_H*aImg[i].pos.row+"px";
+                   aImg[i].style.left =fBigGapcol+Small_W*aImg[i].pos.col+"px";
+                   aImg[i].style.borderWidth ="1px";
+                   aImg[i].style.transform="rotate(0deg)";
+                   aImg[i].style.transitionDelay ="0ms";
+                   var oSpan=aImg[i].getElementsByTagName ("span")[0];
+                   oSpan .style .opacity =1;
+                   if(e.target.className=="img"){
+                       index =e.target.index
+                   }else{
+                       index =e.target .parentNode.index;
+                   }
+                 oSpan.style.backgroundImage="url(img/"+ index +".jpg)";
+                 oSpan.style.backgroundPosition= -Small_W*aImg[i].pos.col+"px "+(-Small_H *aImg[i].pos.row)+"px";
+                   }
+                   oNext.style.display=oPrev.style.display="block";
+                }else{
+                    for(var i=0;i<aImg.length;i++){
+                        aImg[i].style.left=(iImgWidth+fGapCol)*aImg[i].pos.col+fGapCol+"px";
+                        aImg[i].style.top=(iImgHeight+fGapRow)*aImg[i].pos.row+fGapRow+"px";
+                        aImg[i].style.transform="rotate("+(Math.random()*40-20)+"deg";
+                        var oSpan=aImg[i].getElementsByTagName ("span")[0];
+                        oSpan .style .opacity =0;
+                        oSpan.style.transitionDelay="0ms";
+                    }
+                    oNext.style.display=oPrev.style.display="none";
+                }
+                bFlag =!bFlag ;
+            }
+        }
+        oPrev.onclick=oNext.onclick=function (){
+            if(this===oPrev){
+                index --;
+                if(index==0){
+                    index =Num
+                }
+            }else{
+                index ++;
+                if (index ==Num +1){
+                    index=1;
+                }
+            }
+            var arr=[];
+            for(var i=0;i<Num;i++){
+                arr.push(i);
+            }
+            arr.sort(
+                function () {
+                    return Math.random()-0.5;
+                })
+            for(var i=0;i<aImg.length ;i++){
+                var oSpan=aImg[arr[i]].getElementsByTagName ("span")[0];
+                oSpan.style.backgroundImage="url(img/"+index+".jpg)";
+                oSpan.style.transitionDelay=(i+1)*50+"ms";
+            }
+        }
 
     })()
 </script>
