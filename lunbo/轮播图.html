@@ -91,7 +91,7 @@
     var aImg=oPic .getElementsByTagName ('img');
     var oLe= document .getElementById ('le');
     var oRi=document .getElementById ('ri');
-    var nowindex =0;
+    var index =0;
     var timer;
     for(var i=0; i<aLi.length ;i++) {
         aLi [i].index =i;
@@ -106,22 +106,22 @@
     }
      oLe .onclick = oRi .onclick =function () {
              if (this === oLe) {
-                 nowindex--;
-                 if (nowindex == -1) {
-                     nowindex = aLi.length - 1;
+                 index--;
+                 if (index == -1) {
+                     index = aLi.length - 1;
                  }
              }else {
-                     nowindex++;
-                     if (nowindex == aLi.length) {
-                         nowindex = 0;
+                     index++;
+                     if (index == aLi.length) {
+                         index = 0;
                      }
                  }
                  for (var i = 0; i<aLi.length; i++) {
                      aLi[i].className = '';
                      aImg[i].className = '';
                  }
-                 aLi [nowindex].className ='selected';
-                  aImg[nowindex].className = 'selected';
+                 aLi [index].className ='selected';
+                  aImg[index].className = 'selected';
          }
         oLe .onselectstart = oRi .onselectstart = function(){
             return false;
