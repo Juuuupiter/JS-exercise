@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            height: 200px;
+            position: relative;
+            margin-top:200px;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1" >
+    <div>
+        <button class="bigger" >放大</button>
+        <button class="smaller" >缩小</button>
+    </div>
+    <div>
+        <textarea id="text" rows="5" cols="20">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</textarea>
+    </div>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+       var $text=$("#text");
+        $(".bigger").on("click" ,function () {
+            if($text.height()<500){
+                $text.height ($("#text").height()+50)
+            }
+
+        })
+//        $(".bigger").click (function () {
+//            $text.height($text.height()<500?$text.height()+50:$text.height());
+//            $text.animate({
+//                height:500
+//            },'4000')
+//        })
+//        $(".smaller").click (function() {
+//            $text.height ($text.height ()>50?$text.height()-50:$text.height());
+//        })
+    })
+</script>
+</body>
+
+</html>
