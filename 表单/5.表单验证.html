@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            height: 300px;
+        }
+        #result{
+            width: 200px;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>
+<script src="../jquery-1.12.4.js "></script>
+<form action="">
+    <div id="int">
+        <label for="username"  >用户名:</label>
+        <input type="text" id="username">
+    </div>
+        <div id="result" >
+        <img src="img/reg3.gif " class ="wrong"><span>请输入六位的正确用户名</span>
+        <img src="img/reg4.gif " class ="right"><span>输入正确</span>
+        </div>
+    <div>
+        <label>邮箱:</label>
+        <input type="text" >
+    </div>
+<div id="info" >
+    <label>个人信息:</label>
+    <input type="text">
+</div>
+<div>
+    <button>提交</button>
+    <button>重置</button>
+</div>
+</form>
+<script src="../jquery-1.12.4.js "></script>
+<script>
+$ (function () {
+    var $int= $("int");
+    var $username=$("username")
+    $int.on("click",function (){
+     if($username.length<6 || $username.length=="" ){
+
+     }
+    })
+})
+</script>
+</body>
+</html>
