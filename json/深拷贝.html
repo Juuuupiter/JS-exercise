@@ -10,20 +10,36 @@
          name:'zs',
          age:37,
          son:{
-             name:'zs',
+             name:'lala',
              age:8
          }
      }
 
-       var str = obj ;
-       str.name = 'lisi';
-       console.log(obj);
+//       var str = obj ;
+//       str.name = 'lisi';
+//       console.log(obj);
+
+
 //     var str = JSON.stringify(obj);
 //     var oo = JSON.parse(str);
 //     oo.name = 'lisi';
 //     console.log(obj.name);
 
-
+    function clone(obj) {
+         var c={};
+         for( var p in obj ){
+             if(typeof obj[p] == 'object'){
+//                 c[p] = clone()
+                 c[p] = arguments .callee(obj[p]);
+             }else{
+                 c[p] = obj[p];
+             }
+         }
+         return  c;
+    }
+    var oo = clone(obj);
+     oo.son.name = 'aaa';
+     console .log(obj .son .name );
 
 
  </script>
