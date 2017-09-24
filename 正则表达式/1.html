@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="aa">5555</div>
+<div class="aabb">44444</div>
+<div class="aa bb">7777777</div>
+<script>
+
+    console .log (getByClass('aa'));
+    function getByClass(className,context){
+        var reg = new RegExp('\\b'+className+'\\b');
+        context = context || document;
+
+
+
+        var result = [];
+        var arr = context.getElementsByTagName ('*');
+        for(var i = 0; i<arr.length ; i++){
+            if (reg.test(arr[i].className)){
+                result .push (arr[i]);
+            }
+        }
+        return result ;
+
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
