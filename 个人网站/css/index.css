@@ -150,3 +150,13 @@ button {
     margin-top: 25%;
     font-size: 20px;
 }
+#goTop {
+    width: 60px;
+    height: 60px;
+    background: url("../img/jpeg/向上.jpg") center center;
+    background-size: contain ;
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    border-radius: 50px ;
+}

@@ -80,3 +80,15 @@ window.onload = function(){
     typeWriter.type();
 };
 
+
+//回到顶部
+var goTop = document .getElementById ('goTop');
+goTop.onclick = function () {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var timer = setInterval (function () {
+        window .scrollTo (0,scrollTop -= 10);
+        if (scrollTop <=0){
+            clearInterval (timer);
+        }
+    },10);
+}
