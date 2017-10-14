@@ -33,9 +33,13 @@ define(["jquery"],function ($) {
                     marginLeft:-defaultSettigs.width /2
                 });
                 $(".dialog-content").html(defaultSettigs.content);
+
                 $(".dialog-title-close").on("click",function (){
                     $(this).parents(".dialog-container").remove() ;
-                })
+                });
+                $(".dialog-mask").on("click",function () {
+                    $(this).parents(".dialog-container").remove() ;
+                });
             }
 
         };

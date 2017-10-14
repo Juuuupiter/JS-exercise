@@ -21,7 +21,11 @@
     left: 50%;
     margin-top: -200px;
     margin-left: -250px;
-    background: steelblue  ;
+    background:url("../img/jpeg/横版小王子.jpg") no-repeat center center ;
+    background-size: cover;
+}
+.dialog-main p{
+    margin-top:100px;
 }
 .dialog-title-item {
     float: left;
