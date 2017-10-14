@@ -11,6 +11,9 @@ ul ol li{
 a{
     text-decoration: none ;
 }
+button{
+    cursor: pointer ;
+}
 #star{
     position: relative;
     width: 100%;

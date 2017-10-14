@@ -14,7 +14,10 @@
     font-size: 50px;
     text-align: left ;
 }
-
+#open{
+    background: url("../img/jpeg/anniu.png") center center;
+    background-size: contain ;
+}
 #cloud {
     position: absolute;
     width: 100%;
