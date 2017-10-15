@@ -2,10 +2,13 @@
  * Created by 李木子 on 2017/10/3.
  */
 
-var mask= document.getElementById ("mask-wide");
+//封面
+var open= document.getElementById ("cover-open");
+var cover = document .getElementById ("particles-js");
 var body = document .getElementById ("body-wide");
-mask.onclick=function () {
-    mask.style.display ="none";
+open.onclick = function () {
+    open.style.display ="none";
+    cover.style.display = "none";
     body.style.display = "block";
 
 };
