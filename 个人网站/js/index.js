@@ -1,6 +1,15 @@
 /**
  * Created by 李木子 on 2017/10/3.
  */
+
+var mask= document.getElementById ("mask-wide");
+var body = document .getElementById ("body-wide");
+mask.onclick=function () {
+    mask.style.display ="none";
+    body.style.display = "block";
+
+};
+
 //导航
 $("#bb").on("click",function () {
     $("html,body").animate({scrollTop:$("#cloud").offset().top},100);
@@ -72,7 +81,7 @@ var typeWriter = {
     }
 };
 window.onload = function(){
-    var msg = "Hey, <br>Welcome to my world!"+"<br>"+"This is my website."+"<br>"+"这是一颗星球叫M902 ♥";
+    var msg = "Hey,<br>Welcome to my world!<br>This is my website.<br>这是一颗星球叫M902 ♥";
     function getMsg(){
         return msg;
     }
@@ -92,3 +101,4 @@ goTop.onclick = function () {
         }
     },10);
 }
+

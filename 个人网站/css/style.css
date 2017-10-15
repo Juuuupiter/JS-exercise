@@ -14,6 +14,23 @@ a{
 button{
     cursor: pointer ;
 }
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+#mask-wide {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: chocolate;
+    z-index: 500;
+}
+#body-wide {
+    display: none;
+}
 #star{
     position: relative;
     width: 100%;
