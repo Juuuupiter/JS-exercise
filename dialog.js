@@ -33,7 +33,7 @@ define(["jquery"],function ($) {
                     marginTop:-defaultSettigs.height /2,
                     marginLeft:-defaultSettigs.width /2
                 });
-                $(".dialog-content").html(defaultSettigs.content);
+                $(".dialog-content").load(defaultSettigs.content);
                 $(".dialog-title-close").on("click",function (){
                     $(this).parents(".dialog-container").remove() ;
                 })

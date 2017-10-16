@@ -11,7 +11,7 @@ require (["jquery","dialog"],function ($,dialog) {
                  width:400,
                   height:300,
                   title:"denglu",
-                  content:"nihao"
+                  content:""
               } ;
               dialog .open (setting);
        })
