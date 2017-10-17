@@ -92,13 +92,6 @@ canvas {
     bottom: 0;
     right: 0;
 }
-#mask-wide {
-    float: left;
-    width: 100%;
-    height: 100%;
-    background: chocolate;
-    z-index: 500;
-}
 #body-wide {
     display: none;
 }

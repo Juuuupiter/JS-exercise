@@ -103,15 +103,7 @@ button {
 #about-right {
     float: right;
 }
-.square{
-    width: 95%;
-    height: 400px;
-    background: white ;
-    margin: 5% auto ;
-    background: url("../img/jpeg/timg (1).jpg") center center;
-    opacity: 0.9;
-    border-radius: 50px ;
-}
+
 
 
 
