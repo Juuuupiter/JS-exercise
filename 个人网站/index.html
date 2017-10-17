@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="reply/index-reply.css">
 </head>
 <body>
-<!--<div id="mask">-->
+<div id="mask">
     <div id="particles-js"></div>
     <button id="cover-open">open the universe</button>
     <div id="body-wide">
@@ -40,12 +40,30 @@
 </div>
 <div id="about-me">
     <div id="about-left">
-        <div class="square">
-            <p>limuzi</p>
+
+        <div id="container">
+            <div id="imgs">
+                <img src="../个人网站/img/jpeg/1.jpg" alt="" class="selected">
+                <img src="../个人网站/img/jpeg/2.jpg" alt="">
+                <img src="../个人网站/img/jpeg/3.jpg" alt="">
+                <img src="../个人网站/img/jpeg/4.jpg" alt="">
+            </div>
+            <ul id="list-nav">
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <div id="arrows">
+                <span id="prev">&lt;</span>
+                <span id="next">&gt;</span>
+            </div>
         </div>
-    </div>
-    <div class="middle-border">
-        <img src="img/jpeg/星星.png" alt="">
+
+
+
+
+
     </div>
     <div id="about-right">
         <div class="square"></div>
@@ -58,7 +76,7 @@
 </div>
 <button id="goTop"></button>
     </div>
-<!--</div>-->
+</div>
 
 <script src="js/particles.min.js"></script>
 <script src="js/jquery-1.12.4.js "></script>

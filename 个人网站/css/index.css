@@ -85,14 +85,12 @@ button {
     color: white;
 }
 #about-left{
-    width: 30%;
+    width: 34%;
     height:500px;
     float: left;
     background: white;
 }
-#about-left .square {
-    margin-top: 11%;
-}
+
 #about-right {
     width: 66%;
     height:500px;
@@ -116,16 +114,6 @@ button {
 }
 
 
-.middle-border {
-    width:4%;
-    height: 500px;
-    float: left;
-
-}
-.middle-border img {
-    width: 100%;
-    height: 500px;
-}
 
 #intro {
     width: 100%;
@@ -161,4 +149,55 @@ button {
     right: 30px;
     bottom: 20px;
     border-radius: 50px ;
+}
+
+
+
+
+img{
+    border: 0;
+}
+#container{
+    width: 90%;
+    height: 500px;
+    position:relative;
+    right: 0;
+    margin: 0 auto;
+}
+#imgs img{
+    display: none;
+    height: 500px;
+    width: 100%;
+    border-radius:50px ;
+}
+#imgs .selected{
+    display: block;
+    background-size: contain ;
+}
+#list-nav{
+    position: absolute;
+    bottom: 10px;
+    left: 35%;
+
+}
+#list-nav li{
+    width: 30px;
+    height: 30px;
+    background: lightskyblue ;
+    color:white;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+    border-radius: 15px;
+}
+#list-nav .selected{
+    background: pink ;
+}
+#arrows{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display:none;
 }
