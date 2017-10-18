@@ -18,9 +18,15 @@ $("#bb").on("click",function () {
     $("html,body").animate({scrollTop:$("#cloud").offset().top},100);
 });
 $("#cc").on("click",function () {
-    $("html,body").animate({scrollTop:$("#intro").offset().top},100);
+    $("html,body").animate({scrollTop:$("#what-to-do").offset().top},100);
 });
 $("#dd").on("click",function () {
+    $("html,body").animate({scrollTop:$("#intro").offset().top},100);
+});
+$("#ee").on("click",function () {
+    $("html,body").animate({scrollTop:$("#contact").offset().top},100);
+});
+$("#call-me").on("click",function () {
     $("html,body").animate({scrollTop:$("#contact").offset().top},100);
 });
 
