@@ -17,6 +17,7 @@
 #open{
     background: url("../img/jpeg/anniu.png") center center;
     background-size: contain ;
+    cursor: pointer;
 }
 #cloud {
     position: absolute;

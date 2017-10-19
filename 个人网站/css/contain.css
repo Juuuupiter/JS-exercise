@@ -1,4 +1,4 @@
-.dialog-container {
+#dialog-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -6,31 +6,37 @@
     right: 0;
 
 }
-.dialog-mask {
+#dialog-mask{
     width: 100%;
     height: 100%;
-    background: black ;
+    /*background: rgba(0,0,0,0.6);*/
+    background: #000000;
     opacity: 0.6;
-    filter:alpha(opacity=60);
-}
-.dialog-main {
-    width: 1100px;
-    height: 600px;
+    filter: alpha(opacity:60);
     position: absolute;
-    top:50%;
-    left: 50%;
-    margin-top: -200px;
-    margin-left: -250px;
-    background:url("../img/jpeg/横版小王子.jpg") no-repeat center center ;
-    background-size: cover;
+    left: 0;
+    top: 0;
+    display: none;
 }
-.dialog-main p{
+#dialog-main {
+    width: 70%;
+    height: 600px;
+    background:url(../img/jpeg/横版小王子.jpg) no-repeat ;
+    background-size: cover ;
+    position: absolute;
+    display: none;
+    margin-top:-350px;
+    top :50%;
+    left: 50%;
+    margin-left: -35%;
+}
+#dialog-main p{
     margin-top:100px;
 }
-.dialog-title-item {
+#dialog-title-item {
     float: left;
 }
-.dialog-title-close {
+#dialog-title-close {
     float: right;
     cursor: pointer;
 }

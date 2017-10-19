@@ -102,6 +102,26 @@ $("#call-me").on("click",function () {
         typeWriter.type();
     };
 
+//弹出层
+
+var btn = document.getElementById('open');
+var mask = document.getElementById('dialog-mask');
+var dialog = document.getElementById('dialog-main');
+var close = document .getElementById ('dialog-title-close');
+btn.onclick = function () {
+    mask.style.display = 'block';
+    dialog.style.display = 'block';
+};
+mask.onclick = function () {
+    mask.style.display = 'none';
+    dialog.style.display = 'none';
+};
+close .onclick = function (){
+    mask.style.display = 'none';
+    dialog.style.display = 'none';
+}
+
+
 //轮播图
 var oContainer = document.getElementById("container");
 var oNav = document.getElementById("list-nav");
