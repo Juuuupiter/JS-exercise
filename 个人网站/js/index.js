@@ -182,28 +182,17 @@ goTop.onclick = function () {
     },10);
 };
 
-
 //进度条
-(function (){
-    var c = document.getElementById('process'),
-        process = 0,
-        ctx = c.getContext('2d');
-    // 画灰色的圆
+function circle(percent,c){
+    var process = 0 ;
+    var ctx = c.getContext('2d');
+    //外面的圆
     ctx.beginPath();
     ctx.arc(150, 150, 85, 0, Math.PI*2);
     ctx.closePath();
     ctx.fillStyle = '#9cc';
     ctx.fill();
 
-    function animate(){
-        requestAnimationFrame(function (){
-            process = process + 1;
-            drawCricle(ctx, process);
-            if (process <75 ) {
-                animate();
-            }
-        });
-    }
 
     function drawCricle(ctx, percent){
         // 画进度环
@@ -213,14 +202,12 @@ goTop.onclick = function () {
         ctx.closePath();
         ctx.fillStyle = '#369';
         ctx.fill();
-
         // 画内填充圆
         ctx.beginPath();
         ctx.arc(150, 150, 75, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fillStyle = "#fff";
         ctx.fill();
-
         // 填充文字
         ctx.font = "bold 20pt Microsoft YaHei";
         ctx.fillStyle = '#333';
@@ -230,8 +217,36 @@ goTop.onclick = function () {
         ctx.fillText(process + '%', 150, 150);
     }
 
-    animate();
-}());
+    function animate(){
+        requestAnimationFrame(function (){
+            process = process + 1;
+            drawCricle(ctx, process);
+            if (process < percent) {
+                animate();
+            }
+        });
+    }
+
+    $(function play() {
+        $("#what-to-do").on("mouseover",function() {
+            animate();
+            $(this).unbind();
+        });
+    });
+}
+
+
+var fn1 = circle(66,document.getElementById('one'));
+fn1;
+
+var fn2 = circle(88,document.getElementById('two'));
+fn2;
+
+var fn3 = new circle(72,document.getElementById('three'));
+fn3;
+
+var fn4 = new circle(90,document.getElementById('four'));
+fn4;
 
 
 
