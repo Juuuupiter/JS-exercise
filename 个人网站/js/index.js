@@ -256,10 +256,10 @@ function circle(percent,c){
 }
 
 
-var fn1 = circle(66,document.getElementById('one'));
+var fn1 = new circle(96,document.getElementById('one'));
 fn1;
 
-var fn2 = circle(88,document.getElementById('two'));
+var fn2 = new circle(88,document.getElementById('two'));
 fn2;
 
 var fn3 = new circle(72,document.getElementById('three'));
