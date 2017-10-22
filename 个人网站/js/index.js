@@ -268,5 +268,8 @@ fn3;
 var fn4 = new circle(90,document.getElementById('four'));
 fn4;
 
+var fn5 = new circle(86,document.getElementById('five'));
+fn5;
+
 
 

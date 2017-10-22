@@ -13,6 +13,7 @@ a{
 }
 button{
     cursor: pointer ;
+    outline: none;
 }
 
 img{
@@ -90,7 +91,7 @@ canvas {
     position: relative;
     width: 100%;
     height: 750px;
-    background: url("../img/jpeg/timg (1).jpg ") no-repeat center center ;
+    background: url("../img/jpeg/背景5.jpg") no-repeat center center ;
     background-size: cover ;
 }
 #nav {
