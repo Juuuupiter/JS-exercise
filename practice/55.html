@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dd {
+            height: 900px;
+            width: 100%;
+            background: darkblue ;
+        }
+        #cd{
+            height: 600px;
+            width: 100%;
+            background: darkkhaki ;
+        }
+    </style>
+</head>
+<body>
+<button class="btn1">获得 scrollbar top offset</button>
+<div id="dd"></div>
+<div id="cd">
+    <canvas id="one" width="300" height="300"></canvas>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+
+
+    function circle(percent,c){
+            var process = 0 ;
+            var ctx = c.getContext('2d');
+            //外面的圆
+            ctx.beginPath();
+            ctx.arc(150, 150, 85, 0, Math.PI*2);
+            ctx.closePath();
+            ctx.fillStyle = '#9cc';
+            ctx.fill();
+
+
+            function drawCricle(ctx, percent){
+                // 画进度环
+                ctx.beginPath();
+                ctx.moveTo(150, 150);
+                ctx.arc(150, 150, 80, Math.PI * 2, Math.PI * (2 + 2* percent / 100 ));
+                ctx.closePath();
+                ctx.fillStyle = '#369';
+                ctx.fill();
+                // 画内填充圆
+                ctx.beginPath();
+                ctx.arc(150, 150, 75, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fillStyle = "#fff";
+                ctx.fill();
+                // 填充文字
+                ctx.font = "bold 20pt Microsoft YaHei";
+                ctx.fillStyle = '#333';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.moveTo(150, 150);
+                ctx.fillText(process + '%', 150, 150);
+            }
+
+            function animate(){
+                requestAnimationFrame(function (){
+                    process = process + 1;
+                    drawCricle(ctx, process);
+                    if (process < percent) {
+                        animate();
+                    }
+                });
+            }
+
+            $(function play() {
+                $("#cd").on("mouseover",function() {
+                    animate();
+                   $(this).unbind();
+                });
+            });
+        }
+
+
+    var fn1 = circle(66,document.getElementById('one'));
+    fn1;
+
+    var fn2 = circle(88,document.getElementById('two'));
+    fn2;
+//
+    var fn3 = new circle(72,document.getElementById('three'));
+    fn3;
+//
+    var fn4 = new circle(90,document.getElementById('four'));
+    fn4;
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #hhh{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        #dialog-mask {
+            float: left;
+            width: 100%;
+            height: 100%;
+            background: chocolate;
+            /*opacity: 0.6;*/
+            /*filter:alpha(opacity=60);*/
+            /*position: absolute;*/
+            /*z-index: 5;*/
+        }
+        #dialog-main {
+            /*position: fixed;*/
+            /*float: left;*/
+            width: 50%;
+            height:100%;
+            /*position: absolute;*/
+            background: darkcyan ;
+        }
+        #lll {
+            width: 100%;
+            height: 500px;
+            background: fuchsia;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="hhh">
+<div id="dialog-mask"></div>
+<div id="dialog-main"></div>
+    <div id="lll"></div>
+
+</div>
+
+<script>
+    var mask= document.getElementById ("dialog-mask")
+    mask.onclick=function () {
+        mask.style.display ="none"
+    }
+</script>
+</body>
+</html>

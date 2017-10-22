@@ -1,0 +1,22 @@
+$test:".test";
+$font:'font';
+#{$test+ 1}{
+  color: #00cfbd;
+  #{$font+ "-size"}:30px;
+}
+body{
+  color:#aabbcc;
+  font-size: 14px;
+}
+ul{
+  background-color: #dd1144;
+  li{
+    color: #000000;
+    a{
+      font: 20px;
+      &:hover{
+        font: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            margin: 100px auto;
+        }
+        #imgs img{
+            display: none;
+            height: 500px;
+            width: 500px;
+        }
+        #imgs .selected{
+            display: block;
+            background-size: contain ;
+        }
+        #list-nav{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #list-nav li, #arrows span{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+            float: left;
+            margin-right: 5px;
+        }
+        #list-nav .selected{
+            background: orange;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            display:none;
+        }
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="../个人网站/img/jpeg/1.jpg" alt="" class="selected">
+        <img src="../个人网站/img/jpeg/2.jpg" alt="">
+        <img src="../个人网站/img/jpeg/3.jpg" alt="">
+        <img src="../个人网站/img/jpeg/4.jpg" alt="">
+    </div>
+    <ul id="list-nav">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="arrows">
+    <span id="prev">&lt;</span>
+    <span id="next">&gt;</span>
+</div>
+</div>
+
+<script>
+    var oContainer = document.getElementById("container");
+    var oNav = document.getElementById("list-nav");
+    var aLi = oNav.getElementsByTagName("li");
+    var oImgs = document.getElementById("imgs");
+    var aImg = oImgs.getElementsByTagName("img");
+    var oPrev = document.getElementById("prev");
+    var oNext = document.getElementById("next");
+    var nowIndex = 0;//全局变量，保存当前显示的图片的索引
+    var timer;
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;//给每个li对象自定义属性，保存住当时的i的值
+        /*
+         相当于：
+         aLi[0].index = 0;
+         aLi[1].index = 1;
+         aLi[2].index = 2;
+         aLi[3].index = 3;*/
+        aLi[i].onmouseover = function(){
+            nowIndex = this.index;
+            changeImg();
+        };
+    }
+
+    oPrev.onclick = oNext.onclick = function(){
+        if(this === oPrev){
+            nowIndex--;
+            if(nowIndex == -1){
+                nowIndex = aLi.length - 1;//3
+            }
+        }else{
+            nowIndex++;
+            if(nowIndex == aLi.length){
+                nowIndex = 0;
+            }
+        }
+        changeImg();
+    };
+
+    oPrev.onselectstart = oNext.onselectstart = function(){
+        return false;
+    };
+
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        play();
+    };
+
+    play();
+
+    function play(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        }, 1000);
+    }
+
+    function changeImg(){
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].className = "";
+            aImg[i].className = "";
+        }
+        aLi[nowIndex].className = "selected";
+        aImg[nowIndex].className = "selected";
+    }
+
+</script>
+
+</body>
+</html>
