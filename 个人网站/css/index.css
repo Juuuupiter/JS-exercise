@@ -91,14 +91,14 @@
     color: white;
 }
 #about-left{
-    width: 34%;
+    width: 35%;
     height:500px;
     float: left;
     background: white;
 }
 
 #about-right {
-    width: 66%;
+    width: 65%;
     height:500px;
     float: left;
     background: white;
@@ -136,21 +136,18 @@
     height: 600px;
     background: seashell ;
 }
-#contact {
-    width: 100%;
-    height: 600px;
-    background: white;
-}
+
 #what-to-do {
     width: 100%;
     height: 800px;
     position: relative;
-    background: url("../img/jpeg/IMG_2252.jpg") ;
+    /*background: url("../img/jpeg/IMG_2252.jpg") ;*/
     background-size: cover ;
 }
 #what-to-do .todo{
+    margin-top: 20px;
     width: 20%;
-    height: 400px;
+    height: 350px;
     /*background: darkcyan ;*/
     float: left;
 }
@@ -161,6 +158,12 @@
     font-size: 25px;
     color: rgba(93,115,154,1);
 }
+.todo:nth-child(2n){
+    background:rgba(93,115,154,0.6)
+}
+/*.todo:nth-child(2n-1){*/
+    /*background: rgba(198,199,201,1)*/
+/*}*/
 #study-line {
     width: 95%;
     margin: 0 2.5% ;
@@ -190,6 +193,12 @@
 #about-me .example p{
     font-size: 20px;
     color: darkslateblue;
+}
+
+#contact {
+    width: 100%;
+    height: 600px;
+    background: white;
 }
 
 
