@@ -113,8 +113,8 @@
     width: 100px;
     color: pink;
     background:lightsteelblue ;
-    margin: auto ;
-    margin-top: 50px;
+    margin:50px auto ;
+    /*margin-top: 50px;*/
     border-radius: 10px;
     border: none;
 }
@@ -145,7 +145,7 @@
     background-size: cover ;
 }
 #what-to-do .todo{
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     width: 20%;
     height: 350px;
     /*background: darkcyan ;*/
@@ -161,13 +161,28 @@
 .todo:nth-child(2n){
     background:rgba(93,115,154,0.6)
 }
-/*.todo:nth-child(2n-1){*/
-    /*background: rgba(198,199,201,1)*/
-/*}*/
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid white;
+    margin: 0 auto ;
+}
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid white;
+    float: left;
+    margin: 0 auto ;
+}
 #study-line {
     width: 95%;
     margin: 0 2.5% ;
     height: 200px;
+    margin-bottom: 20px;
     /*background: #AF4FDD ;*/
     float: left;
 }
