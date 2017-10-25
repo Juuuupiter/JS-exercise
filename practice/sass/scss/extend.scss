@@ -1,0 +1,12 @@
+@import "";
+div{
+  color: #ffb73d;
+  font-size: 34px;
+  a{
+    text-decoration: none;
+  }
+}
+p{
+  @extend div;
+  background-color: #ffc73d;
+}
