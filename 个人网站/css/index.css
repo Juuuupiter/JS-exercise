@@ -175,8 +175,10 @@
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-bottom: 30px solid white;
-    float: left;
-    margin: 0 auto ;
+    position: absolute;
+    margin-top: 320px;
+    /*float: left;*/
+    margin-left: 9%;
 }
 #study-line {
     width: 95%;
