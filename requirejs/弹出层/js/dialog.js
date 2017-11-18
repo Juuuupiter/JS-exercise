@@ -15,7 +15,7 @@ define(["jquery"],function ($){
         this.defaultSettings={
             width:500,
             height:400,
-            title:"弹出层",
+            title:"弹出",
             content:""
         } ;
         $.extend(this.defaultSettings,setting);

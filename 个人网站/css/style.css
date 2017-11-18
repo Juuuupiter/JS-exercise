@@ -28,6 +28,7 @@ body {
 canvas {
     display: block;
     vertical-align: bottom;
+    width: 100%;
 }
 
 /* ---- particles.js container ---- */
@@ -109,6 +110,7 @@ canvas {
     width: 100px;
     background: rgba(124,141,185,0.6) ;
     border-radius: 10px;
+    cursor: pointer ;
 }
 #about-me {
     width: 100%;
